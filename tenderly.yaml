@@ -1,0 +1,13 @@
+account_id: "hrishi_jd"
+actions:
+  hrishi_jd/monitor-stakes:
+    runtime: v2
+    sources: reward-withdrawn
+    specs:
+      reward-withdrawn:
+        description: This actions sends alerts if more than 75% of total available rewards are withdrawn.
+        function: reward-withdrawn:handleWithdraw
+        trigger:
+          type: transaction
+        execution_type: sequential
+project_slug: "monitor-stakes"
